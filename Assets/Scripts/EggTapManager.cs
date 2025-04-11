@@ -36,13 +36,12 @@ public class EggTapManager : MonoBehaviour
             character.DOMoveY(2, 2f).SetEase(Ease.OutBack);
             character.DOScale(Vector3.one, 2f).SetEase(Ease.OutBack);
             Camera.main.transform.DOLookAt(Vector3.up * 2.5f, 2f).SetEase(Ease.OutBack);
-            Invoke("Restart", 4f);
         }
         tapCount++;
         Debug.Log("Tap count: " + tapCount);
     }
-    public void Restart()
+    public void LoadScene(int val)
     {
-        UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        UnityEngine.SceneManagement.SceneManager.LoadScene(val);
     }
 }
